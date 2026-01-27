@@ -13,11 +13,12 @@ public class KafkaConsumer {
 
     private static final Logger log = LoggerFactory.getLogger(KafkaConsumer.class);
 
-    //     retrun to patient service to see how we send events to kafka topic from there again
-    @KafkaListener(topics = "patient" , groupId = "analytics-service") // specify topic that we
-    // will consume from
+
+//     return to patient service to see how we send events to kafka topic from there again
 //    any event that is send to this topic will be consumed by this method
 //    groupId is to tell kafka broker who this consumer is
+    @KafkaListener(topics = "patient" )//, groupId = "analytics-service") // specify topic that we
+    // will consume from
     public void consumeEvent(byte[] event) {
         // Logic to process the consumed event , first convert byte[] to string
         try {
