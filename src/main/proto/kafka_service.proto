@@ -1,0 +1,18 @@
+//we copied this from patient-service to keep the same structure for the messages
+// as we did for grpc for patient and billing services
+syntax = "proto3";
+package patient.events;
+
+option java_multiple_files=true;
+
+message PatientEvent {
+    string patientId = 1;
+    string name = 2;
+    string email = 3;
+    string event_type = 4;
+//    we can add more fields if needed but these what will send in the service and the consumer
+  //    need
+}
+
+
+//compile it to get the generated code
